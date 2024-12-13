@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/faces/windows logo 2.png" />
+    <title>Designer Decades</title>
+  </head>
+  <body>
+    <audio id="pradaa" src="sounds/prada.mp3" preload="auto"></audio>
+    <audio id="Rickk" src="sounds/rickowens.mp3" preload="auto"></audio>
+    <audio id="Balenci" src="sounds/balenciaga.mp3" preload="auto"></audio>
+    <audio id="click-sound" src="sounds/Mouse click sound effect.mp3" preload="auto"></audio>
+    <audio id="startup-sound" src="sounds/microsoft-windows-xp-startup-sound.mp3" preload="auto"></audio>
+    <div id="startMenu" class="start-menu">
+      <div class="start-content">
+        <h1>Designer Decades</h1>
+        <p>Please enter the password to proceed:  its "design2024"</p>
+        <input id="passwordInput" type="password" class="password-input" placeholder="Enter password">
+        <button onclick="checkPassword()">Start</button>
+      </div>
+    </div>
+    <div id="mainContent">
+    <div class="top-row desktop">
+      <!-- Section where the image and text will appear -->
+      <div class="square1 center-content" id="maintext">
+        <img src="" id="okay" onclick="playRunwayMusic()"/>
+      </div>
+      <div class="square2 center-content sidetext" id="sidetext"></div>
+      <div class="background"></div>
+    </div>
+
+    <div class="bottom-row taskbar">
+      <div class="bottomrowsquare center-windows">
+        <img
+          src="images/faces/windows logo 2.png"
+          class="clickable1"
+          id="button"
+          onclick="windowsbutton()"
+        />
+      </div>
+      <div class="bottomrowsquare"></div>
+
+      <div class="bottomrowsquare">
+        <img
+          src="images/faces/folder.png"
+          class="clickable1"
+          id="folder-balenciaga"
+          onclick="balenciaga()"
+        />
+        <div class="square2" id="sidetext"></div>
+        <div class="background"></div>
+        <div class="hover-text center-windows">Balenciaga 2000</div>
+      </div>
+
+      <div class="bottomrowsquare">
+        <img
+          src="images/faces/folder.png"
+          class="clickable1"
+          id="folder-prada"
+          onclick="prada()"
+        />
+        <div class="square2" id="sidetext"></div>
+        <div class="background"></div>
+        <div class="hover-text center-windows">Prada 2010</div>
+      </div>
+
+      <div class="bottomrowsquare">
+        <img
+          src="images/faces/folder.png"
+          class="clickable1"
+          id="folder-rick"
+          onclick="rick()"
+        />
+        <div class="square2" id="sidetext"></div>
+        <div class="background"></div>
+        <div class="hover-text center-windows">Rick 2020</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

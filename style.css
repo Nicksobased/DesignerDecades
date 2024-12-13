@@ -1,0 +1,308 @@
+/* the 100vh and 100vw set the size of the body to fill the viewport (screen) */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  #content
+    cursor: url("images/curse.png"), pointer;
+    cursor: url("images/OGcursor.png"), auto;
+}
+/* Ensure body and html elements take full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbars */
+}
+/* Main content (this will initially be hidden) */
+#mainContent {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+/* Start Menu */
+.start-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  z-index: 1000; /* Ensure it’s on top */
+  background-image: url("images/windows\ xp\ no\ background.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.start-content {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font: xx-large;
+}
+
+.password-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  border: 2px solid #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+/* build your layout */
+.top-row {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  background-image: url("images/faces/Microsoft_Nostalgic_Windows_Wallpaper_4k.jpg"); /* The image used */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.bottom-row {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  background-image: url("images/faces/taskbar\ new\ length.png"); /* The image used */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 100% 100%; /* Resize the background image to cover the entire container */
+}
+.sidetext {
+  color: rgb(218, 212, 212); /* Set the text color to white */
+  font-size: 19px; /* Set a reasonable text size */
+  line-height: 1.5; /* Adjust line height for readability */
+  overflow: hidden; /* Ensure nothing overflows */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  text-align: center; /* Center the text horizontally */
+  padding: 10px; /* Optional: Add some padding inside the div */
+  height: 100%; /* Ensure the div fills its parent container */
+  width: 100%; /* Ensure the div fills its parent container */
+  box-sizing: border-box; /* Ensure padding doesn't mess with width/height */
+}
+.square1 {
+  height: 100%;
+  width: 70%;
+}
+.square2 {
+  height: 100%;
+  width: 30%;
+  text-overflow: inherit;
+}
+.bottomrowsquare {
+  height: 100%;
+  width: 25%;
+}
+.bottomrowsquare1 {
+  height: 100%;
+  width: 25%;
+}
+
+/* this will make ALL <img> elements at most 100% of their PARENT! */
+img {
+  max-height: 100%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* this class goes on the PARENT div of the image! */
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.center-windows {
+  align-items: center;
+  display: flex;
+}
+.translucent {
+  opacity: 0.5;
+}
+/* Add a relative position to the parent div to position text absolutely inside it */
+.bottomrowsquare,
+.bottomrowsquare1 {
+  height: 100%;
+  width: 25%;
+  position: relative; /* Ensure the text is positioned relative to this div */
+  overflow: hidden; /* Optional: Hide anything that overflows the container */
+}
+
+/* Add the hidden text container inside the div */
+.bottomrowsquare .hover-text,
+.bottomrowsquare1 .hover-text {
+  position: absolute;
+  top: 50%; /* Center the text vertically */
+  left: 100px; /* Center the text horizontally */
+  transform: translate(0%, -50%); /* Correct positioning for centering */
+  color: white; /* Text color */
+  font-size: 18px; /* Text size */
+  visibility: hidden; /* Initially hide the text */
+  opacity: 0; /* Initially hide the text (for smooth fade-in) */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+/* Show the text when the user hovers over the div */
+.bottomrowsquare:hover .hover-text,
+.bottomrowsquare1:hover .hover-text {
+  visibility: visible; /* Show the text */
+  opacity: 1; /* Fade the text in */
+}
+
+img:active {
+  transform: scale(0.95);
+}
+.clickable1 {
+  filter: brightness(85%) drop-shadow(2px 8px 3px);
+}
+/* changes to the style when the user HOVERS */
+.clickable1:hover {
+  cursor: url("images/faces/windows\ logo\ 2.png"), auto;
+  filter: brightness(100%) drop-shadow(2px 8px 3px);
+  transform: scale(1.04);
+}
+/* changes to the style when the user CLICKS */
+.clickable1:active {
+  filter: drop-shadow(0px 0px 3px);
+  transform: scale(0.98);
+}
+
+/* Effect 1: Scaling with Rotation and Shadow */
+.clickable1 {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.clickable1:hover {
+  cursor: pointer;
+  transform: scale(1.05) rotate(5deg);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+.clickable1:active {
+  transform: scale(0.95) rotate(-5deg);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+.clickable3 {
+  transition: border 0.3s ease, transform 0.1s ease;
+  border: 3px solid transparent;
+}
+.clickable3:hover {
+  cursor: pointer;
+  border-color: #ff6347; /* Bright color border */
+}
+.clickable3:active {
+  transform: scale(0.98) translateY(2px);
+  border-color: #ff6347;
+}
+/* colors to see divs */
+.purple {
+  background-color: #523d64;
+}
+.blue {
+  background-color: #4365ff;
+}
+.green {
+  background-color: #85e21f;
+}
+.orange {
+  background-color: #da6339;
+}
+.gold {
+  background-color: #d3a047;
+}
+.yellow {
+  background-color: #ffeca7;
+}
+.black {
+  background-color: #000000;
+}
+.slate {
+  background-color: #1e171f;
+}
+.dark-grey {
+  background-color: #3a3b3c;
+}
+.light-grey {
+  background-color: #d3d3d3;
+}
+
+
+@media only screen and (max-width: 1250px) {
+  .sidetext{
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .sidetext{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .sidetext{
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .sidetext{
+    font-size: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 451px) {
+
+}
+@media only screen and (max-width: 450px) {
+  .top-row {
+    display: block;
+  }
+  .square1 {
+    height: 70%;
+    width: 100%;
+  }
+  .square2 {
+    height: 30%;
+    width: 100%;
+  }
+  .sidetext{
+  font-size: 10px;
+}
+}
+@media only screen and (max-width: 310px) {
+  .sidetext{
+    font-size: 8px;
+  }
+}
+@media only screen and (max-width: 270px) {
+  .sidetext{
+    font-size: 7px;
+  }
+}
+@media only screen and (max-width: 200px) {
+  .sidetext{
+    font-size: 6px;
+  }
+}
+
+
